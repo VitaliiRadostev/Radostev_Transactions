@@ -5,11 +5,7 @@ import ru.sber.sber_tech.dto.TransferDto;
 
 import java.math.BigDecimal;
 
-/**
- * TransactionService.
- *
- * @author Kiselev_Mikhail
- */
+
 public interface TransactionService {
 
     Account depositIntoAccount(Long accountId, BigDecimal depositAmount);
