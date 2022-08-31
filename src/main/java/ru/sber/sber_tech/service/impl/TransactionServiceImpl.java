@@ -15,11 +15,7 @@ import javax.persistence.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/**
- * Impl {@link TransactionService}.
- *
- * @author Kiselev_Mikhail
- */
+
 @Service
 @Transactional
 @LogMethodCall

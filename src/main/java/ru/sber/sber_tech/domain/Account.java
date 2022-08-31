@@ -12,11 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Version;
 import java.math.BigDecimal;
 
-/**
- * Счет клиента.
- *
- * @author Kiselev_Mikhail
- */
+
 @Data
 @Entity
 @Accessors(chain = true)

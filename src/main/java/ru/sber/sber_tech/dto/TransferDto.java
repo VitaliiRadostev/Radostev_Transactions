@@ -7,11 +7,7 @@ import lombok.experimental.Accessors;
 import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 
-/**
- * TransferDto.
- *
- * @author Kiselev_Mikhail
- */
+
 @Data
 @AllArgsConstructor
 @Accessors(chain = true)

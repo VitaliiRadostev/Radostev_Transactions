@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="v1.0_01_schema_init" author="Kiselev_Mikhail">
+    <changeSet id="v1.0_01_schema_init" author="radostevvv">
         <preConditions>
             <not>
                 <sequenceExists sequenceName="account_id_seq"/>
@@ -21,14 +21,14 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="v1.0_01_load_test_data" author="Kiselev_Mikhail" runOnChange="true">
+    <changeSet id="v1.0_01_load_test_data" author="radostevvv" runOnChange="true">
         <loadUpdateData
                 tableName="account"
                 primaryKey="id"
                 file="db/cvs/test_data.cvs"/>
     </changeSet>
 
-    <changeSet id="v1.0_01_add_account_opt_lock" author="Kiselev_Mikhail">
+    <changeSet id="v1.0_01_add_account_opt_lock" author="radostevvv">
         <preConditions>
             <not>
                <columnExists tableName="account" columnName="version"/>

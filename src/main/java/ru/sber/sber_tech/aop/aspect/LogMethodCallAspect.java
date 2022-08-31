@@ -12,13 +12,7 @@ import java.lang.reflect.Parameter;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-/**
- * Аспект для логирования начала и конца метода.
- * При входе в метод пишем в лог имя метода и параметры.
- * На выходе - возвращаемое значение.
- *
- * @author Kiselev_Mikhail
- */
+
 @Slf4j
 @Aspect
 @Component

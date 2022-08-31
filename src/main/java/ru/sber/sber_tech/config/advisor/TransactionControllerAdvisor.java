@@ -16,11 +16,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-/**
- * TransactionControllerAdvisor.
- *
- * @author Kiselev_Mikhail
- */
+
 @Slf4j
 @RestControllerAdvice("ru.sber.sber_tech.controller")
 public class TransactionControllerAdvisor {
