@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="v1.0_01_schema_init" author="Kiselev_Mikhail">
+        <preConditions>
+            <not>
+                <sequenceExists sequenceName="account_id_seq"/>
+                <tableExists tableName="account"/>
+            </not>
+        </preConditions>
+
+        <createSequence sequenceName="account_id_seq"/>
+
+        <createTable tableName="account" remarks="Счет клиента">
+            <column name="id" type="BIGINT" remarks="Идентификатор">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="account_pk"/>
+            </column>
+            <column name="amount" type="DECIMAL" remarks="Количество денежных средств на счете" defaultValue="0"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1.0_01_load_test_data" author="Kiselev_Mikhail" runOnChange="true">
+        <loadUpdateData
+                tableName="account"
+                primaryKey="id"
+                file="db/cvs/test_data.cvs"/>
+    </changeSet>
+
+    <changeSet id="v1.0_01_add_account_opt_lock" author="Kiselev_Mikhail">
+        <preConditions>
+            <not>
+               <columnExists tableName="account" columnName="version"/>
+            </not>
+        </preConditions>
+
+       <addColumn tableName="account">
+           <column name="version" type="INT" defaultValue="0">
+               <constraints nullable="false"/>
+           </column>
+       </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
